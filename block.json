@@ -1,0 +1,70 @@
+{
+  "apiVersion": 2,
+  "name": "circle-progress-bar/progress",
+  "title": "Circle Progress Bar",
+  "category": "widgets",
+  "icon": "chart-pie",
+  "keywords": [
+    "progress",
+    "circle",
+    "bar",
+    "chart",
+    "statistics"
+  ],
+  "version": "1.0.0",
+  "textdomain": "circle-progress-bar",
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "customClassName": true,
+    "align": true
+  },
+  "description": "Add beautiful circular progress indicators to your content.",
+  "editorScript": "file:./build/index.js",
+  "attributes": {
+    "percentage": {
+      "type": "number",
+      "default": 75
+    },
+    "size": {
+      "type": "number",
+      "default": 100
+    },
+    "strokeColor": {
+      "type": "string",
+      "default": "#00aaff"
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#e6e6e6"
+    },
+    "text": {
+      "type": "string",
+      "default": "Progress"
+    },
+    "animationSpeed": {
+      "type": "number",
+      "default": 1
+    },
+    "useShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "useGradient": {
+      "type": "boolean",
+      "default": false
+    },
+    "strokeWidth": {
+      "type": "number",
+      "default": 10
+    },
+    "fontSize": {
+      "type": "number",
+      "default": 20
+    },
+    "fontColor": {
+      "type": "string",
+      "default": "#333"
+    }
+  }
+}

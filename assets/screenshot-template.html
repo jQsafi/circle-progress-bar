@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Progress Bar Screenshots</title>
+    <link rel="stylesheet" href="screenshot-styles.css">
+</head>
+<body>
+    <!-- Screenshot 1: Basic Progress Bar -->
+    <div class="screenshot-container">
+        <h2 class="screenshot-title">Circle Progress Bar in Action</h2>
+        <div class="screenshot-content">
+            <svg class="progress-circle" viewBox="0 0 100 100">
+                <circle class="circle-bg" cx="50" cy="50" r="45"/>
+                <circle class="circle-progress" cx="50" cy="50" r="45"
+                    style="stroke-dasharray: 283; stroke-dashoffset: 70"/>
+                <text x="50" y="50" text-anchor="middle" dy=".3em" class="circle-text">75%</text>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Screenshot 2: Settings Panel -->
+    <div class="screenshot-container">
+        <h2 class="screenshot-title">Block Settings Panel</h2>
+        <div class="screenshot-content" style="flex-direction: column;">
+            <div style="width: 280px; background: white; padding: 16px; border: 1px solid #ccc;">
+                <div style="margin-bottom: 16px;">
+                    <label style="display: block; margin-bottom: 8px;">Progress (%)</label>
+                    <input type="range" value="75" min="0" max="100" style="width: 100%;">
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <label style="display: block; margin-bottom: 8px;">Size (px)</label>
+                    <input type="range" value="150" min="50" max="300" style="width: 100%;">
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <label style="display: block; margin-bottom: 8px;">Colors</label>
+                    <div style="display: flex; gap: 8px;">
+                        <div style="width: 30px; height: 30px; background: #00aaff; border-radius: 4px;"></div>
+                        <div style="width: 30px; height: 30px; background: #e6e6e6; border-radius: 4px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screenshot 3: Style Variations -->
+    <div class="screenshot-container">
+        <h2 class="screenshot-title">Different Style Variations</h2>
+        <div class="screenshot-content">
+            <!-- Default Style -->
+            <svg class="progress-circle" viewBox="0 0 100 100">
+                <circle class="circle-bg" cx="50" cy="50" r="45"/>
+                <circle class="circle-progress" cx="50" cy="50" r="45"
+                    style="stroke-dasharray: 283; stroke-dashoffset: 70"/>
+                <text x="50" y="50" text-anchor="middle" dy=".3em" class="circle-text">75%</text>
+            </svg>
+
+            <!-- Gradient Style -->
+            <svg class="progress-circle" viewBox="0 0 100 100">
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00aaff"/>
+                        <stop offset="100%" style="stop-color:#0066cc"/>
+                    </linearGradient>
+                </defs>
+                <circle class="circle-bg" cx="50" cy="50" r="45"/>
+                <circle class="circle-progress" cx="50" cy="50" r="45"
+                    style="stroke: url(#gradient); stroke-dasharray: 283; stroke-dashoffset: 70"/>
+                <text x="50" y="50" text-anchor="middle" dy=".3em" class="circle-text">75%</text>
+            </svg>
+
+            <!-- Thick Style with Shadow -->
+            <svg class="progress-circle" viewBox="0 0 100 100" style="filter: drop-shadow(0 0 3px rgba(0,0,0,0.2));">
+                <circle class="circle-bg" cx="50" cy="50" r="45" style="stroke-width: 15"/>
+                <circle class="circle-progress" cx="50" cy="50" r="45"
+                    style="stroke-width: 15; stroke-dasharray: 283; stroke-dashoffset: 70"/>
+                <text x="50" y="50" text-anchor="middle" dy=".3em" class="circle-text">75%</text>
+            </svg>
+        </div>
+    </div>
+</body>
+</html>

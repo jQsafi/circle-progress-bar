@@ -1,0 +1,35 @@
+{
+  "name": "circle-progress-bar",
+  "version": "1.0.0",
+  "description": "A customizable and animated circle progress bar block for WordPress.",
+  "author": "Shafayat Hossain",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "wordpress",
+    "gutenberg",
+    "block",
+    "progress-bar",
+    "circle"
+  ],
+  "homepage": "https://jqsafi.github.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jQsafi/circle-progress-bar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jQsafi/circle-progress-bar/issues"
+  },
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "packages-update": "wp-scripts packages-update",
+    "lint:js": "wp-scripts lint-js",
+    "lint:style": "wp-scripts lint-style",
+    "makepot": "wp i18n make-pot . languages/circle-progress-bar.pot",
+    "prepackage": "npm run build && npm run makepot",
+    "package": "rm -rf circle-progress-bar.zip && zip -r circle-progress-bar.zip . -x '*.git*' 'node_modules/*' 'src/*' 'package*.json' '.*' 'composer.*' 'phpcs.xml*' 'assets/screenshot-template.html' 'assets/screenshot-styles.css' 'assets/create-screenshots.sh'"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^26.0.0"
+  }
+}
