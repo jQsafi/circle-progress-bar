@@ -1,6 +1,7 @@
 === Circle Progress Bar Block ===
 Contributors: jqsafi
-Tags: progress, circle, block-editor, gutenberg, progress-bar, svg
+Donate link: https://profiles.wordpress.org/jqsafi
+Tags: progress, circle, block-editor, gutenberg, progress-bar
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -8,11 +9,78 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A customizable and animated circle progress bar Gutenberg block for displaying progress, statistics, or metrics in a visually appealing way.
+A customizable circle progress bar Gutenberg block for displaying progress, statistics, or metrics in a visually appealing way.
 
 == Description ==
 
-Circle Progress Bar Block is a modern Gutenberg block plugin that adds beautiful, animated circular progress indicators to your WordPress site. Perfect for displaying progress, statistics, or metrics in a visually appealing way.
+Circle Progress Bar Block is a modern Gutenberg block plugin that adds beautiful circular progress indicators to your WordPress site. Perfect for displaying progress, statistics, or metrics in a visually appealing way.
+
+== Source Code ==
+
+All uncompiled source code is included in this plugin. The production code in `build/index.js` is compiled from:
+
+= Main Source File =
+Located at `src/index.js`, this is the complete React source code for the block:
+
+```javascript
+import { registerBlockType } from '@wordpress/blocks';
+import { InspectorControls } from '@wordpress/block-editor';
+import {
+    PanelBody,
+    RangeControl,
+    ColorPicker,
+    TextControl,
+    SelectControl,
+} from '@wordpress/components';
+
+registerBlockType('circle-progress-bar/progress', {
+    title: 'Circle Progress Bar',
+    icon: 'chart-pie',
+    category: 'widgets',
+    description: 'A customizable circle progress bar.',
+    keywords: ['progress', 'circle', 'chart'],
+    supports: { html: false },
+    attributes: {
+        percentage: { type: 'number', default: 75 },
+        size: { type: 'number', default: 100 },
+        strokeColor: { type: 'string', default: '#00aaff' },
+        bgColor: { type: 'string', default: '#e6e6e6' },
+        text: { type: 'string', default: 'Progress' },
+        useShadow: { type: 'boolean', default: false },
+        useGradient: { type: 'boolean', default: false },
+        strokeWidth: { type: 'number', default: 10 },
+        fontSize: { type: 'number', default: 20 },
+        fontColor: { type: 'string', default: '#333' }
+    },
+
+    // Full source code available in src/index.js
+    // See GitHub repository for complete implementation
+});
+```
+```
+
+= Build Tools =
+The production code is generated using standard WordPress tools:
+* `@wordpress/scripts` - For development and build
+* Webpack - For module bundling
+* Babel - For modern JavaScript compatibility
+
+= Building from Source =
+1. The source is in `src/index.js`
+2. Build tools are configured in `package.json`
+3. To compile:
+   ```bash
+   npm install
+   npm run build
+   ```
+4. Output goes to `build/index.js`
+
+= Directory Structure =
+To work with the source code:
+1. Clone the GitHub repository: [https://github.com/jqsafi/circle-progress-bar](https://github.com/jqsafi/circle-progress-bar)
+2. Install dependencies: `npm install`
+3. Start development server: `npm start`
+4. Build production version: `npm run build`
 
 = Features =
 
@@ -22,11 +90,6 @@ Circle Progress Bar Block is a modern Gutenberg block plugin that adds beautiful
     * Optional gradient effects
     * Configurable font size and text
     * Shadow effects available
-
-* **Smooth Animations**
-    * Customizable animation speed
-    * Smooth easing effects
-    * Animated progress updates
 
 * **Block Editor Integration**
     * Easy to use block controls
@@ -43,7 +106,26 @@ Circle Progress Bar Block is a modern Gutenberg block plugin that adds beautiful
 
 1. Upload the plugin folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Add the block in any post or page using the Block Editor.
+3. In the Block Editor, click the (+) icon to add a new block
+4. Search for "Circle Progress" or find it under the "Widgets" category
+5. Add the block to your page or post
+
+== Usage ==
+
+= Basic Configuration =
+
+1. After adding the block, set your desired percentage (0-100) in the block settings panel
+2. Customize the appearance:
+   * Change circle size using the "Size" slider
+   * Adjust stroke width using the "Thickness" slider
+   * Set colors for the progress bar, background, and text
+   * Enable/disable gradient effect
+   * Add custom text above or below the percentage
+
+= Advanced Features =
+
+* **Shadow Effects**: Enable and customize shadow effects in the "Effects" panel
+* **Text Options**: Configure font size, weight, and position
 
 == Changelog ==
 
@@ -72,7 +154,44 @@ Yes, you can add multiple instances of the block, each with its own unique setti
 
 Yes, the plugin uses SVG which is supported by all modern browsers. It's tested and works perfectly with Chrome, Firefox, Safari, and Edge.
 
-= Can I change the animation speed? =
+= Where can I find the source code? =
 
-Yes, you can customize the animation duration through the block settings panel.
+The uncompiled source code is included in the `src` directory of this plugin and documented in the Source Code section at the top of this readme. You can also find it on GitHub at [https://github.com/jqsafi/circle-progress-bar](https://github.com/jqsafi/circle-progress-bar).
+
+== Development ==
+
+The Circle Progress Bar Block is developed using modern JavaScript and follows WordPress coding standards. The source code is available on GitHub:
+
+* GitHub Repository: [https://github.com/jqsafi/circle-progress-bar](https://github.com/jqsafi/circle-progress-bar)
+
+= Building from Source =
+
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. For development with live reload:
+   ```
+   npm start
+   ```
+4. For production build:
+   ```
+   npm run build
+   ```
+
+The plugin uses the following build tools:
+* @wordpress/scripts for development and build processes
+* webpack for bundling
+* Babel for JavaScript transpilation
+* ESLint and Prettier for code formatting
+
+Source files are located in:
+* `src/` - Uncompiled JavaScript source code
+* `build/` - Compiled and minified production code
+
+== Upgrade Notice ==
+
+= 1.0.0 =
+Initial release of Circle Progress Bar Block. Includes all core features with full block editor integration.
 

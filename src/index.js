@@ -12,8 +12,8 @@ registerBlockType( 'circle-progress-bar/progress', {
 	title: 'Circle Progress Bar',
 	icon: 'chart-pie',
 	category: 'widgets',
-	description: 'A customizable circle progress bar with animation options.',
-	keywords: [ 'progress', 'circle', 'animation' ],
+	description: 'A customizable circle progress bar.',
+	keywords: [ 'progress', 'circle', 'chart' ],
 	supports: { html: false },
 	attributes: {
 		percentage: { type: 'number', default: 75 },
@@ -21,7 +21,6 @@ registerBlockType( 'circle-progress-bar/progress', {
 		strokeColor: { type: 'string', default: '#00aaff' },
 		bgColor: { type: 'string', default: '#e6e6e6' },
 		text: { type: 'string', default: 'Progress' },
-		animationSpeed: { type: 'number', default: 1 },
 		useShadow: { type: 'boolean', default: false },
 		useGradient: { type: 'boolean', default: false },
 		strokeWidth: { type: 'number', default: 10 },
@@ -36,7 +35,6 @@ registerBlockType( 'circle-progress-bar/progress', {
 			strokeColor,
 			bgColor,
 			text,
-			animationSpeed,
 			useShadow,
 			useGradient,
 			strokeWidth,
@@ -106,16 +104,6 @@ registerBlockType( 'circle-progress-bar/progress', {
 							}
 							min={ 10 }
 							max={ 50 }
-						/>
-						<RangeControl
-							label="Animation Speed (sec)"
-							value={ animationSpeed }
-							onChange={ ( val ) =>
-								setAttributes( { animationSpeed: val } )
-							}
-							min={ 0.1 }
-							max={ 5 }
-							step={ 0.1 }
 						/>
 						<TextControl
 							label="Custom Text"
@@ -202,7 +190,6 @@ registerBlockType( 'circle-progress-bar/progress', {
 						cx={ radius }
 						cy={ radius }
 						style={ {
-							transition: `stroke-dashoffset ${ animationSpeed }s`,
 							filter: useShadow
 								? 'drop-shadow(0 0 5px rgba(0,0,0,0.5))'
 								: 'none',

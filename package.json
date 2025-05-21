@@ -25,11 +25,16 @@
     "packages-update": "wp-scripts packages-update",
     "lint:js": "wp-scripts lint-js",
     "lint:style": "wp-scripts lint-style",
+    "format:js": "wp-scripts format",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
     "makepot": "wp i18n make-pot . languages/circle-progress-bar.pot",
-    "prepackage": "npm run build && npm run makepot",
-    "package": "rm -rf circle-progress-bar.zip && zip -r circle-progress-bar.zip . -x '*.git*' 'node_modules/*' 'src/*' 'package*.json' '.*' 'composer.*' 'phpcs.xml*' 'assets/screenshot-template.html' 'assets/screenshot-styles.css' 'assets/create-screenshots.sh'"
+    "prepackage": "npm run lint:js && npm run build && npm run makepot",
+    "package": "rm -rf circle-progress-bar.zip && zip -r circle-progress-bar.zip . -x '*.git*' 'node_modules/*' 'package*.json' '.*' 'composer.*' 'phpcs.xml*' 'assets/screenshot-template.html' 'assets/screenshot-styles.css' 'assets/create-screenshots.sh'",
+    "screenshots": "node scripts/generate-screenshots.js"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^26.0.0"
+    "@wordpress/scripts": "^26.0.0",
+    "playwright": "latest"
   }
 }

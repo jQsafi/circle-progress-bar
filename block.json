@@ -42,10 +42,6 @@
       "type": "string",
       "default": "Progress"
     },
-    "animationSpeed": {
-      "type": "number",
-      "default": 1
-    },
     "useShadow": {
       "type": "boolean",
       "default": false
